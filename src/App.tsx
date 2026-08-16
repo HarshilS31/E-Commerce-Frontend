@@ -19,7 +19,6 @@ const App = () => {
         <Route path="register" element={<Register />} />
         <Route path="cart" element={<Cart />} />
         <Route path="checkout" element={<Checkout />} />
-
         <Route path="admin" element={<AdminDashboard />} />
       </Route>
     )

@@ -13,3 +13,7 @@ export interface ProductResponse {
   message:string;
   products:Product[]
 }
+export interface ProductCardProps {
+  product:Product
+
+}

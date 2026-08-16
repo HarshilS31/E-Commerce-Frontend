@@ -1,0 +1,295 @@
+/* =========================================================
+   THEME: "Showroom"
+   Light gallery-style e-commerce theme — condensed poster
+   type, signal red accent, whitespace over borders.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Color */
+  --bg: #F7F5F1;
+  --surface: #FFFFFF;
+  --surface-hover: #F1EFE9;
+  --border: #E7E3DA;
+  --text: #1A1A18;
+  --text-muted: #726F68;
+  --accent: #C1121F;
+  --accent-hover: #9C0E19;
+  --accent-ink: #FFFFFF;
+
+  /* Type */
+  --font-display: 'Bebas Neue', system-ui, sans-serif;
+  --font-body: 'Work Sans', system-ui, sans-serif;
+
+  /* Layout */
+  --radius: 2px;
+  --border-hairline: 1px solid var(--border);
+  --content-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  margin: 0;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+  background: var(--bg);
+  border-bottom: var(--border-hairline);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 22px 32px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navbar-container a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.navbar-container a:hover {
+  color: var(--text);
+}
+
+.navbar-container a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* push auth/cart links to the right without extra markup */
+.navbar-container a[href="/login"] {
+  margin-left: auto;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 100px 32px 80px;
+}
+
+.hero-content {
+  max-width: 640px;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 28px;
+}
+
+/* wall-label swatch */
+.hero-eyebrow::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: clamp(48px, 7vw, 76px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: 0.01em;
+  margin: 0 0 22px;
+  color: var(--text);
+}
+
+.hero-description {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0 0 36px;
+  max-width: 460px;
+}
+
+.hero-button {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: var(--radius);
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.hero-button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   FEATURED PRODUCTS
+   ========================================================= */
+
+.featured-products {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 24px 32px 100px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin: 0 0 32px;
+  color: var(--text);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 40px 28px;
+}
+
+/* =========================================================
+   PRODUCT CARD
+   ========================================================= */
+
+.product-card {
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: transform 0.15s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--surface-hover);
+  margin-bottom: 16px;
+  border: var(--border-hairline);
+}
+
+.product-card h3 {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+/* hairline rule above the price */
+.product-card p:nth-of-type(1) {
+  position: relative;
+  padding-top: 10px;
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.product-card p:nth-of-type(1)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  border-top: 2px solid var(--text);
+}
+
+.product-card p:nth-of-type(2) {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0 0 14px;
+}
+
+.product-card a {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.product-card a::after {
+  content: ' →';
+}
+
+.product-card a:hover {
+  color: var(--accent);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .navbar-container {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px 20px;
+  }
+
+  .navbar-container a[href="/login"] {
+    margin-left: 0;
+  }
+
+  .hero {
+    padding: 60px 20px 52px;
+  }
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  .featured-products {
+    padding: 16px 20px 60px;
+  }
+}

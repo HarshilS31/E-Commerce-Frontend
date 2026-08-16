@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getProducts } from "../api/product"
 import type { Product, ProductResponse } from "../types/interfaces"
+import ProductCard from "../components/productCard"
 
 const Products = () => {
     const [products, setProducts] = useState<Product[]>([])
@@ -22,10 +23,10 @@ const Products = () => {
         return <div>Loading...</div>
     }
     return (
-        <div>
+        <div className="product-grid">
             {products.map(product => (
                 <div key={product._id}>
-                    {product.name}
+                    <ProductCard product={product}/>
                 </div>
             ))}
         </div>
