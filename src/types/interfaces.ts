@@ -1,0 +1,15 @@
+export interface Product {
+  _id: string;
+  name: string;
+  description: string;
+  price: number;
+  stock: number;
+  category: string;
+  images: string[];
+  createdAt: string;
+  updatedAt: string;
+}
+export interface ProductResponse {
+  message:string;
+  products:Product[]
+}
