@@ -8,6 +8,8 @@ import Checkout from "./pages/Checkout"
 import AdminDashboard from "./pages/AdminDashboard"
 import RootLayout from "./layout/RootLayout"
 import Cart from "./pages/Cart"
+import CartProvider from "./context/CartProvider"
+import { ToastContainer,Slide } from "react-toastify"
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -25,7 +27,21 @@ const App = () => {
   )
 
   return (
+    <CartProvider>
     <RouterProvider router={router}/>
+            <ToastContainer
+                position="top-right"
+                autoClose={1000}
+                hideProgressBar={false}
+                closeOnClick
+                pauseOnHover
+                draggable
+                theme="dark"
+                transition={Slide}
+            />
+    </CartProvider>
+   
+    
   )
 }
 export default App
