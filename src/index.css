@@ -406,3 +406,36 @@ body {
   font-size: 14px;
   padding: 15px 30px;
 }
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  padding: 14px 28px;
+  cursor: pointer;
+  border: none;
+  transition: background .15s ease, color .15s ease, border-color .15s ease, transform .1s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-muted);
+  border: var(--border-hairline);
+}
+.btn-secondary:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
