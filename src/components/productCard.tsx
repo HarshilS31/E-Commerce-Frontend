@@ -18,7 +18,7 @@ const ProductCard = ({product}:ProductCardProps) => {
         <img src={product.images[0]} alt={product.name} />
         <h3>{product.name}</h3>
         <p>₹{product.price}</p>
-        <p>Stock:{product.stock}</p>
+        <p>Stock: {product.stock}</p>
         <Link to={`/products/${product._id}`}>View Details</Link>
         <button className="add-to-cart-btn" onClick={()=>addedToCart()}>Add to Cart</button>
         

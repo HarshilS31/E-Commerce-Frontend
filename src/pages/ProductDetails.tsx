@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom"
 import type { Product } from "../types/interfaces"
 import {  useContext, useEffect, useState } from "react"
 import { getProductById } from "../api/product"
-import type { cartType } from "../types/interfaces"
 import { cartContext } from "../context/CartProvider"
 import { toast } from "react-toastify"
 const ProductDetails = () => {

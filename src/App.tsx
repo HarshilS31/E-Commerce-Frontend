@@ -9,7 +9,10 @@ import AdminDashboard from "./pages/AdminDashboard"
 import RootLayout from "./layout/RootLayout"
 import Cart from "./pages/Cart"
 import CartProvider from "./context/CartProvider"
+import AuthProvider from "./context/AuthProvider"
+import ProtectedRoute from "./layout/ProtectedRoute"
 import { ToastContainer,Slide } from "react-toastify"
+
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -20,28 +23,32 @@ const App = () => {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="cart" element={<Cart />} />
-        <Route path="checkout" element={<Checkout totalAmount={0} />} />
-        <Route path="admin" element={<AdminDashboard />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="checkout" element={<Checkout />} />
+        </Route>
+        <Route element={<ProtectedRoute requiredRole="admin" />}>
+          <Route path="admin" element={<AdminDashboard />} />
+        </Route>
       </Route>
     )
   )
 
   return (
-    <CartProvider>
-    <RouterProvider router={router}/>
-            <ToastContainer
-                position="top-right"
-                autoClose={1000}
-                hideProgressBar={false}
-                closeOnClick
-                pauseOnHover
-                draggable
-                theme="dark"
-                transition={Slide}
-            />
-    </CartProvider>
-   
-    
+    <AuthProvider>
+      <CartProvider>
+        <RouterProvider router={router}/>
+        <ToastContainer
+            position="top-right"
+            autoClose={1000}
+            hideProgressBar={false}
+            closeOnClick
+            pauseOnHover
+            draggable
+            theme="dark"
+            transition={Slide}
+        />
+      </CartProvider>
+    </AuthProvider>
   )
 }
 export default App

@@ -1,5 +1,5 @@
 import type { RegisterUserDetails } from "../types/interfaces"
-import { registerUser } from "../api/product"
+import { registerUser } from "../api/auth"
 import { useState,type FormEvent } from "react"
 import { toast } from "react-toastify"
 import { useNavigate } from "react-router-dom"

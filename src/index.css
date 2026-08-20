@@ -439,3 +439,117 @@ body {
   color: var(--text);
   border-color: var(--text);
 }
+.checkout {
+  max-width: 480px;
+  margin: 80px auto;
+  padding: 40px 32px;
+  background: var(--surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.checkout h2 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 26px;
+  margin: 0 0 28px;
+  color: var(--text);
+}
+.checkout .btn-primary,
+.checkout .btn-secondary {
+  margin: 0 6px;
+}
+.checkout > div {
+  margin-top: 24px;
+  padding: 14px 18px;
+  background: var(--surface-hover);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  font-size: 14px;
+  color: var(--text);
+}
+
+.cart-products {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 60px 32px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.cart-products h2 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 26px;
+  margin: 24px 0;
+  color: var(--text);
+}
+.empty-cart {
+  text-align: center;
+  padding: 100px 32px;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 32px;
+  color: var(--text-muted);
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+  background: var(--surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius);
+}
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--surface-hover);
+  flex-shrink: 0;
+}
+.cart-item h3 {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  flex: 1 1 160px;
+  margin: 0;
+}
+.cart-item p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-hover);
+  border: var(--border-hairline);
+  border-radius: var(--radius);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color .15s ease;
+}
+.qty-btn:hover { border-color: var(--accent); }
+.remove-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  transition: color .15s ease;
+}
+.remove-btn:hover { color: var(--accent); }

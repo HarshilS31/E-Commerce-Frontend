@@ -37,3 +37,24 @@ export interface userDetails {
   email:string;
   password:string;
 }
+
+export interface RegisterUserDetails {
+  username:string;
+  email:string;
+  password:string;
+  role:string;
+
+}
+export interface authProviderType {
+    user: userDetails | null;
+    loading: boolean;
+    login: (data: userDetails) => Promise<void>
+    logout: () => Promise<void>;
+    fetchCurrUser: () => Promise<void>
+}
+export interface AuthUser {
+  id: string;
+  username: string;
+  email: string;
+  role?: string;
+}
