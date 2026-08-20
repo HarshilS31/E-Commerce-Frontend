@@ -58,3 +58,35 @@ export interface AuthUser {
   email: string;
   role?: string;
 }
+//
+export interface Category {
+  _id: string;
+  name: string;
+  description: string;
+}
+export interface CategoryResponse {
+  message: string;
+  categories: Category[];
+}
+export interface CategorySingleResponse {
+  message: string;
+  category: Category;
+}
+export interface ProductSingleResponse {
+  message: string;
+  product: Product;
+}
+export interface ProductFormValues {
+  name: string;
+  description: string;
+  price: number;
+  stock: number;
+  category: string;
+  images: string[];
+}
+export interface ProductFormProps {
+  categories: Category[]
+  editingProduct: Product | null
+  onDone: () => void
+  onCancel: () => void
+}

@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { Navigate, Outlet } from "react-router-dom"
 import { authContext } from "../context/AuthProvider"
+import { toast } from "react-toastify"
 const ProtectedRoute = ({ requiredRole }: { requiredRole?: string }) => {
   const context = useContext(authContext)
   if (!context) {
@@ -12,7 +13,9 @@ const ProtectedRoute = ({ requiredRole }: { requiredRole?: string }) => {
   }
 
   if (!user) {
+    toast.info("Please Log in first")
     return <Navigate to="/login" replace />
+    
   }
   if (requiredRole && user.role !== requiredRole) {
     return <Navigate to="/" replace />

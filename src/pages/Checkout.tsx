@@ -30,7 +30,7 @@ const Checkout = () => {
         <button  className="btn-primary" onClick={()=>simulatePayment()}>Simulate Payment</button>
         <button className="btn-secondary" onClick={() => navigate("/cart")}>Return to Cart</button>
         {simulatedPayment && <div>
-          <div className="payment-done">Payment simulated successfully of  ₹{totalAmount}</div>
+          <div className="payment-done">Payment of ₹{totalAmount} simulated successfully </div>
           <button onClick={()=>navigate("/products")}>Return to Products</button></div>}
     </div>
   )

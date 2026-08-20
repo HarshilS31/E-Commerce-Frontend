@@ -7,7 +7,6 @@ export const authContext = createContext<authProviderType | undefined>(undefined
 const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<AuthUser | null>(null)
   const [loading, setLoading] = useState<boolean>(true)
-
   const fetchCurrUser = async () => {
     try {
       const res = await getCurrentUser()
@@ -23,7 +22,10 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, [])
   const login = async (data: userDetails) => {
     const res = await loginUser(data)
+  
     setUser(res.user)
+    
+    
   }
   const logout = async () => {
     try {
