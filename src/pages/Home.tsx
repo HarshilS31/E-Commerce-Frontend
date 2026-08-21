@@ -15,10 +15,7 @@ const Home = () => {
         </div>
     </section>
 
-    <section className="featured-products">
-        <h2 className="section-title">Featured Products</h2>
-        {/* products later */}
-    </section>
+
 </div>
   )
 }
