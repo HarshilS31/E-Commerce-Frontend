@@ -12,7 +12,7 @@ import CartProvider from "./context/CartProvider"
 import AuthProvider from "./context/AuthProvider"
 import ProtectedRoute from "./layout/ProtectedRoute"
 import { ToastContainer,Slide } from "react-toastify"
-
+import SearchBar from "./pages/SearchBar"
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -23,6 +23,7 @@ const App = () => {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="/search" element={<SearchBar />}/>
         <Route element={<ProtectedRoute />}>
           <Route path="checkout" element={<Checkout />} />
         </Route>
@@ -32,7 +33,6 @@ const App = () => {
       </Route>
     )
   )
-
   return (
     <AuthProvider>
       <CartProvider>

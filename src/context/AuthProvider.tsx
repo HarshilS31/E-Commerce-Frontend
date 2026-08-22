@@ -3,7 +3,6 @@ import { loginUser, logoutUser as apiLogoutUser, getCurrentUser } from "../api/a
 import type { authProviderType, userDetails, AuthUser } from "../types/interfaces"
 
 export const authContext = createContext<authProviderType | undefined>(undefined)
-
 const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<AuthUser | null>(null)
   const [loading, setLoading] = useState<boolean>(true)
@@ -22,10 +21,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, [])
   const login = async (data: userDetails) => {
     const res = await loginUser(data)
-  
     setUser(res.user)
-    
-    
   }
   const logout = async () => {
     try {

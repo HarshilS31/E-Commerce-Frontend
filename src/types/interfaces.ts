@@ -58,7 +58,6 @@ export interface AuthUser {
   email: string;
   role?: string;
 }
-//
 export interface Category {
   _id: string;
   name: string;
@@ -89,4 +88,13 @@ export interface ProductFormProps {
   editingProduct: Product | null
   onDone: () => void
   onCancel: () => void
+}
+export interface ProductQueryParams {
+    search?: string
+    category?: string
+    minPrice?: number
+    maxPrice?: number
+    sort?: "price_asc" | "price_desc"
+    page?: number
+    limit?: number
 }

@@ -26,9 +26,9 @@ const Navbar = () => {
         )}
         <NavLink to='/checkout'>Checkout</NavLink>
         <NavLink to ='/cart'>Cart</NavLink>
+        <NavLink to='/search'>SearchBar</NavLink>
     </div>
   </nav>
   )
 }
-
 export default Navbar
