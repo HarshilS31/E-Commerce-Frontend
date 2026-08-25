@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react"
-import type { Category, Product } from "../../types/interfaces"
+import type { Product } from "../../types/interfaces"
 import { createProduct, updateProduct } from "../../api/product"
 import { toast } from "react-toastify"
 import type {ProductFormProps} from "../../types/interfaces"

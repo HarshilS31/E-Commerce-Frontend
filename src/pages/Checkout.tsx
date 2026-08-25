@@ -26,7 +26,6 @@ const Checkout = () => {
   const simulatePayment = async () => {
     setProcessing(true)
     try {
-      // step 1: create the order from the current cart contents
       const orderItems = cartItems.map(item => ({
         product: item.product._id,
         quantity: item.quantity

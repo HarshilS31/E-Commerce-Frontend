@@ -13,7 +13,7 @@ const ProductDetails = () => {
     if(!id) return
     try {
       const data = await getProductById(id)
-      setProduct(data.product)
+      setProduct((data as unknown as { product: Product }).product)
     }catch(error) {
       console.error(error)
     }finally {

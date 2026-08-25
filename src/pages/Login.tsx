@@ -1,6 +1,6 @@
 import { useContext, useState, type FormEvent } from "react"
 import { useNavigate } from "react-router-dom"
-import type { userDetails } from "../types/interfaces"
+import type { LoginInput } from "../types/interfaces"
 import { authContext } from "../context/AuthProvider"
 import { toast } from "react-toastify"
 const Login = () => {
@@ -9,7 +9,7 @@ const Login = () => {
   if (!auth) {
     throw new Error("Auth context is undefined")
   }
-  const [userData, setUserData] = useState<userDetails>({
+  const [userData, setUserData] = useState<LoginInput>({
     email: "",
     password: "",
   })

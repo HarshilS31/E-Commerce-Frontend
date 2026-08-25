@@ -36,8 +36,12 @@ export interface CartContextProps  {
 export interface userDetails {
   email:string;
   password:string;
+  role?: "admin" | "user";
 }
-
+export interface LoginInput {
+  email: string;
+  password: string;
+}
 export interface RegisterUserDetails {
   username:string;
   email:string;

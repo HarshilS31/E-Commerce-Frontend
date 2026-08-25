@@ -9,7 +9,7 @@ const SearchBar = () => {
     const [getCategories, setGetCategories] = useState<CategoryResponse | null>(null)
     const [formInput,setFormInput] = useState<ProductQueryParams>({})
     const[products,setProducts] = useState<Product[]>([])
-    const [loading,setLoading] = useState<boolean>(true)
+    const [,setLoading] = useState<boolean>(true)
 const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     const cleanParams = Object.fromEntries(
