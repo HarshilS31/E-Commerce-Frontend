@@ -28,7 +28,7 @@ const Cart = () => {
       <h2>Total Amount: ₹{totalAmount}</h2>
       <button className="btn-secondary" onClick={()=>clearCart()}>Clear Cart</button>
       <button  className="btn-primary" onClick={()=>navigate("/checkout",{ state:{totalAmount}})}>Checkout</button>
-    
+
     </div>
   )
 }

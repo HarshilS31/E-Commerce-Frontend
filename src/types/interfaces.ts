@@ -98,3 +98,18 @@ export interface ProductQueryParams {
     page?: number
     limit?: number
 }
+export interface OrderItemInput {
+  product: string;
+  quantity: number;
+}
+export interface OrderResponse {
+  message: string;
+  order: {
+    _id: string;
+    user: string;
+    items: { product: string; quantity: number; price: number }[];
+    totalAmount: number;
+    status: string;
+    paymentStatus: string;
+  };
+}

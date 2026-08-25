@@ -10,11 +10,15 @@ const SearchBar = () => {
     const [formInput,setFormInput] = useState<ProductQueryParams>({})
     const[products,setProducts] = useState<Product[]>([])
     const [loading,setLoading] = useState<boolean>(true)
-    const handleSubmit = async (e:FormEvent) =>{
-        e.preventDefault()
-        const res = await filterProducts(formInput)
-        setProducts(res.products)
-    }
+const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    const cleanParams = Object.fromEntries(
+        Object.entries(formInput).filter(([_, value]) => value !== "" && value !== undefined)
+    )
+
+    const res = await filterProducts(cleanParams)
+    setProducts(res.products)
+}
     useEffect(()=>{
         const fetchCategories = async() => {
             try {
